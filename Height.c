@@ -1,10 +1,10 @@
-#include<stdio.h> 
+#include<stdio.h>
 
-  int main () 
-  {
-      int h1,h2;
-      scanf("%d %d", &h1, &h2);
-    
-     (h1 > h2)? printf("%d",h1) : printf("%d",h2) ;
-    
+  int main () {
+      
+      int x,y;
+      scanf("%d %d",&x,&y);
+      
+      (x>y)? printf("%d",x) : printf("%d",y);
+      
   }
