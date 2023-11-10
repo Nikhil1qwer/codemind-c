@@ -3,14 +3,16 @@
   int main () {
       int n;
       scanf("%d",&n);
-      int t,temp = n, r = 0;
-      while ( temp != 0){
-           t = temp % 10;
-           r = r * 10 + t;
-           temp /= 10;
-      } if ( r == n ){
-          printf("Palindrome");
-      } else {
-          printf("Not Palindrome");
+      int t = n,d, P = 0;
+      while ( n != 0){
+          d = n % 10;
+          P = P*10 + d;
+          n /= 10;
       }
+      if ( t == P){
+          printf("True");
+      } else {
+          printf("False");
+      }
+      
   }
