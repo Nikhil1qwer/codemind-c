@@ -1,32 +1,28 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <ctype.h>
 
   int main () {
-      int T;
-      scanf("%d", &T);
-      getchar();
+      int tcase;
+      scanf("%d", &tcase);
       
-      while(T > 0) {
-      char Digimon[101];
-      scanf("%[^
-]", Digimon);
-      getchar();
-      
-      int flag = false;
-      for (int i = 0; Digimon[i] != NULL; i++) {
-          if (isdigit(Digimon[i])) {
-              flag = true;
+      while (tcase > 0) {
+          char str[1001];
+          scanf("%s", str);
+          
+          int flag = 0;
+          for (int i = 0; str[i] != NULL; i++) {
+              if (isdigit(str[i])) {
+                  flag = 1;
+              }
           }
-      }
-      if (flag == true) {
-          printf("Yes
+          if (flag) {
+              printf("Yes
 ");
-      } else {
-          printf("No
+          } else {
+              printf("No
 ");
+          }
+          tcase--;
       }
-      T--;
-    }
       
   }
