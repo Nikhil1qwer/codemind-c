@@ -1,28 +1,30 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <stdbool.h>
 
-  int main () {
-      int tcase;
-      scanf("%d", &tcase);
-      
-      while (tcase > 0) {
-          char str[1001];
-          scanf("%s", str);
-          
-          int flag = 0;
-          for (int i = 0; str[i] != NULL; i++) {
-              if (isdigit(str[i])) {
-                  flag = 1;
-              }
-          }
-          if (flag) {
-              printf("Yes
+ int main () {
+     int tcases;
+     scanf("%d", &tcases);
+     
+     while (tcases > 0) {
+         char str[1001];
+         scanf("%s", str);
+         
+         int flag = false;
+         for (int i = 0; str[i] != NULL; i++) {
+             if (isdigit(str[i])) {
+                 flag = true;
+             }
+         }
+         if (flag) {
+             printf("Yes
 ");
-          } else {
-              printf("No
+         } else {
+             printf("No
 ");
-          }
-          tcase--;
-      }
-      
-  }
+         }
+         
+         tcases--;
+     }
+     
+ }
