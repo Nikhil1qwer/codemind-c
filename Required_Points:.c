@@ -2,9 +2,9 @@
 
   int main ()
   {
-      int x,y;
-      scanf("%d %d",&x,&y);
+      int x, y;
+      scanf("%d %d", &x, &y);
      
-      printf("%d",y/x); 
+      printf("%d", y / x); 
      
   }
