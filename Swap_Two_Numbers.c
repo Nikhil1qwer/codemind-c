@@ -1,13 +1,20 @@
-#include<stdio.h> 
+#include <stdio.h>
 
-  int main () {
-      int x,y;
-      scanf("%d %d" ,&x ,&y);
-      
-      int t = x;
-          x = y;
-          y = t;
-      printf("%d
-%d",x,y);
-      return 0;
-  }
+void swap (int* a, int* b) {
+    int t;
+    t = *a;
+    *a = *b;
+    *b = t;
+}
+
+void print (int a, int b) {
+    printf("%d
+%d", a, b);
+}
+
+int main () {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    swap(&a, &b);
+    print(a, b);
+}
