@@ -1,11 +1,8 @@
-#include <stdio.h>
-
-void AddDisplay(int a, int b) {
-    printf("%d", a + b);
-}
+#include <iostream>
+using namespace std;
 
 int main() {
     int a, b;
-    scanf("%d %d", &a, &b);
-    AddDisplay(a, b);
+    cin >> a >> b;
+    cout << a + b << endl;
 }
