@@ -1,2 +1,2 @@
 # codemind-c
-// name is Nikiru 
+Explore C👀 with me.
