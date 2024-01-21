@@ -1,8 +1,11 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
+
+void AddDisplay(int a, int b) {
+    printf("%d", a + b);
+}
 
 int main() {
     int a, b;
-    cin >> a >> b;
-    cout << a + b << endl;
+    scanf("%d %d", &a, &b);
+    AddDisplay(a, b);
 }
