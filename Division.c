@@ -1,9 +1,8 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main() {
     int a, b;
-    cin >> a >> b;
-    cout << a / b << endl;
+    scanf("%d %d", &a, &b);
+    printf("%d", a / b);
+    return 0;
 }
