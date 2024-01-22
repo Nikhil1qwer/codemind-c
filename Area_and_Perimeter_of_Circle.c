@@ -1,10 +1,12 @@
-#include<stdio.h> 
+#include <iostream>
+#include <iomanip>
 
-   int main ()  {
-       float r;
-       scanf("%f",&r);
-       
-       printf("%.2f
-%.2f", 3.14 * r * r , 2 * 3.14 * r);
-       return 0;
-   }
+using namespace std;
+
+int main() {
+    int r;
+    cin >> r;
+    float pi = 3.14;
+    cout << fixed << setprecision(2);
+    cout << pi * r * r << endl << 2 * pi * r << endl; 
+}
