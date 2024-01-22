@@ -1,12 +1,12 @@
-#include <iostream>
-#include <iomanip>
+#include <stdio.h>
 
-using namespace std;
 #define pi 3.14
 
 int main() {
     int r;
-    cin >> r;
-    cout << fixed << setprecision(2);
-    cout << pi * r * r << endl << 2 * pi * r << endl;
+    scanf("%d", &r);
+    
+    printf("%.2f
+%.2f ",(float) pi * r * r,(float) 2 * pi * r);
+    
 }
