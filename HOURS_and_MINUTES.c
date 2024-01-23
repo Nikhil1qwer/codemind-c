@@ -1,14 +1,20 @@
-#include <iostream>
+#include <stdio.h>
 
-using namespace std;
+void DisplayFormatTime(int Time);
 
 int main() {
     int Time;
-    cin >> Time;
+    scanf("%d", &Time);
     
-    int hours = Time / 60;
+    DisplayFormatTime(Time);
+    
+}
+
+void DisplayFormatTime(int Time) {
+    
+    int hrs = Time / 60;
     int mins = Time % 60;
     
-    cout << hours << " " << "Hour(s)" << " " << mins << " Minute(s)" << endl;
+    printf("%d Hour(s) %d Minute(s)", hrs, mins);
     
 }
