@@ -1,9 +1,18 @@
-#include<stdio.h> 
+#include <iostream>
 
-   int main () {
-       int x;
-       scanf("%d" ,&x);
-      
-       printf("%d", x*(x+1)/2); 
-       
-   }
+using namespace std;
+int sum(int n);
+
+int main() {
+    int num;
+    cin >> num;
+    cout << sum(num) << endl;
+}
+
+int sum(int n) {
+    int sum = 0;
+    for (int i = n; i >= 1; i--) {
+        sum += i;
+    }
+    return sum;
+}
