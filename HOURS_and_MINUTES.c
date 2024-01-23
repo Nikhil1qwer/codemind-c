@@ -1,13 +1,14 @@
-#include<stdio.h> 
+#include <iostream>
 
-  int main () {
-    int x;
-    scanf("%d" ,&x);
+using namespace std;
+
+int main() {
+    int Time;
+    cin >> Time;
     
-    int h = x/60;
-    int m = x%60;
+    int hours = Time / 60;
+    int mins = Time % 60;
     
-    printf("%d Hour(s) %d Minute(s)" , h ,m);
-    return 0;
-  }
-  
+    cout << hours << " " << "Hour(s)" << " " << mins << " Minute(s)" << endl;
+    
+}
