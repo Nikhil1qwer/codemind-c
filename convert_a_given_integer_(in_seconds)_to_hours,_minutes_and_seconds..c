@@ -1,14 +1,15 @@
-#include<stdio.h> 
+#include <iostream>
 
-int  main () 
- {
-     int s;
-     scanf("%d",&s);
-     
-     int h = s / 3600;
-     int m = (s % 3600) / 60;
-         s = (s % 3600) % 60;
-         
-         printf("H:M:S-%d:%d:%d",h,m,s);
-         return 0;
- }
+using namespace std;
+
+int main() {
+    int Time;
+    cin >> Time;
+    
+    int hrs = Time / 3600;
+    int min = (Time % 3600) / 60;
+    int sec = (Time % 3600) % 60;
+    
+    cout << "H:M:S-" << hrs << ":" << min << ":" << sec << endl;
+    
+}
