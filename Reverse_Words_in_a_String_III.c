@@ -7,17 +7,19 @@ int main() {
     scanf("%[^
 ]", str);
     
+    char *reverse = (char *) malloc (strlen(str) + 1);
     char *Words = strtok(str, " ");
     
+    int j = 0;
     while (Words != NULL) {
-        
         int len = strlen(Words);
         for (int i = len - 1; i >= 0; i--) {
-            printf("%c", Words[i]);
-        }   printf(" ");
-        
+            reverse[j] = Words[i]; j++;
+        }   reverse[j++] = ' ';
         Words = strtok(NULL, " ");
     }
     
-    return 0;
+    reverse[j - 1] = NULL;
+    printf("%s", reverse);
+    free(reverse);
 }
