@@ -37,8 +37,8 @@ char *EvenString(char *str) {
         return NULL;
     }
     
-    int n = 0;
     char *digit = (char *) malloc (10 * sizeof(char));
+    int n = 0;
     
     for (int i = 0; i < strlen(str); i++) {
         if (isdigit(str[i])) {
@@ -58,21 +58,23 @@ char *EvenString(char *str) {
                 j++;
             }
         }
-    }  
-    digit[n] = NULL;
+    }  digit[n] = NULL;
     
     sort(digit);
     
     if ((digit[n - 1] - '0') % 2 != 0) {
-        int even_index = 0;
-        int odd_index = n - 1;
+        int ex = -1;
+        int ox = n - 1;
         
         for (int i = n - 1; i >= 0; i--) {
             if ((digit[i] - '0') % 2 == 0) {
-                even_index = i;
-                swap(&digit[odd_index], &digit[even_index]);
+                ex = i;
                 break;
             }
+        }
+        
+        if (ex != -1) {
+            swap(&digit[ox], &digit[ex]);
         }
     }
     
@@ -83,13 +85,13 @@ int main() {
     char str[1001];
     scanf("%s", str);
     
-    char *num = EvenString(str);
+    char *Num = EvenString(str);
     
-    if (num == NULL) {
+    if (Num == NULL) {
         printf("-1");
     } else {
-        printf("%s", num);
-        free(num);
+        printf("%s", Num);
+        free(Num);
     }
     
 }
