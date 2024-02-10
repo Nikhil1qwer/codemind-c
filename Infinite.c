@@ -1,17 +1,14 @@
-#include <stdio.h>
-
-void Infinity () {
-    int num;
-    scanf("%d", &num);
-    
-    while (num != -1) {
-        printf("%d
-", num * num);
-        scanf("%d", &num);
-    }
-    
-}
+#include <iostream>
+#include <cmath>
 
 int main() {
-    Infinity();
+    int num;
+    std :: cin >> num;
+    
+    while(num != -1) {
+        std :: cout << pow(num, 2) << std :: endl;
+        std :: cin >> num;
+    }
+    
+    return 0;
 }
