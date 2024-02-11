@@ -1,23 +1,30 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     int n;
     scanf("%d", &n);
     
-    int arr[n];
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+    int *bits = (int *) malloc (sizeof(int) * n);
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &bits[i]);
     }
     
-    int consecutive = 0, count = 0;
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == 0) {
-            consecutive = (count > consecutive) ? count : consecutive;
-            count = 0;
+    int Cmax = 0;
+    int consec = 0;
+    for(int i = 0; i < n; i++) {
+        if(bits[i] == 0) {
+            Cmax = (Cmax > consec)? Cmax : consec;
+            consec = 0;
         } else {
-            count++;
+            consec++;
         }
-    }
-    consecutive = (count > consecutive) ? count : consecutive;
-    printf("%d", consecutive);
+    }   
+    
+    Cmax = (Cmax > consec)? Cmax : consec;
+    
+    printf("%d", Cmax);
+    
+    free(bits);
+    return 0;
 }
