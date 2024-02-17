@@ -1,27 +1,44 @@
-#include <iostream>
-#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
 
-using namespace std;
-
-int main() {
-    int n, max;
-    cin >> n >> max;
-    
-    vector<int> arr(n); // dynamic --> int *arr = new int[n]
-    for (int i = 0; i < n; i++) {
-        cin>>arr[i];
-    }
-    
-    int count = 0, maxCount = 0;
-    for (int i = 0; i < n; i++) {
-        if (arr[i] > max) {
-            count++;
-            if (count == 2) {
-                break;
+int GetMaxScore(int *diff, int MaxDiff, int size) {
+    int score = 0, skiped = 0;
+    for(int i = 0; i < size; i++) {
+        if(diff[i] > MaxDiff) {
+            skiped++;
+            if(skiped == 2) {
+                return score;
             }
         } else {
-            maxCount++;
+            score++;
         }
     }
-    cout << maxCount;
+    return score;
+}
+
+void ReadArray(int *arr, int size) {
+    for(int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+}
+
+void display(int score) {
+    printf("%d", score);
+}
+
+int main() {
+    int size;
+    scanf("%d", &size);
+    
+    int MaxDiff;
+    scanf("%d", &MaxDiff);
+    
+    int *difficulty = (int *) malloc (sizeof(int) * size);
+    
+    ReadArray(difficulty, size);
+    int score = GetMaxScore(difficulty, MaxDiff, size);
+    display(score);
+    
+    free(difficulty);
+    return 0;
 }
