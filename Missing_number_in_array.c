@@ -1,26 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-  int main () {
-      int Tcases;
-      scanf("%d", &Tcases);
-      
-      while (Tcases > 0) {
-          int n;
-          scanf("%d", &n);
-          
-          int arr[n], sum = 0;
-          for (int i = 0; i < n - 1; i++) {
-              scanf("%d", &arr[i]);
-              sum += arr[i];
-          }
-          
-          int N_naturals = n * (n + 1) / 2;
-          int Missing = abs(N_naturals - sum);
-          
-          printf("%d
+int MissingNumber(int *nums, int size) {
+    
+    int missing = size * (size + 1) / 2;
+    for(int i = 0; i < size; i++) {
+        missing -= nums[i];
+    }
+    return missing;
+    
+}
+
+int main() {
+    int Tcases;
+    scanf("%d", &Tcases);
+    
+    while(Tcases) {
+        int size;
+        scanf("%d", &size);
+        
+        int *array = (int *) calloc (size, sizeof(int));
+        for(int i = 0; i < size - 1; i++) {
+            scanf("%d", &array[i]);
+        }
+        
+        int Missing = MissingNumber(array, size);
+        printf("%d
 ", Missing);
-          Tcases--;
-      }
-      
-  }
+        
+        free(array);
+        Tcases--;
+    }
+    
+    return 0;
+}
