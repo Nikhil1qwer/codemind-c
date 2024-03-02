@@ -1,28 +1,17 @@
-#include <iostream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
-int MAX(vector<int> vector, int size);
 
 int main() {
-    int size;
-    cin >> size;
-    
-    vector <int> vector(size);
+    int size; cin >> size;
+    vector<int> vec(size);
     for(int i = 0; i < size; i++) {
-        cin >> vector[i];
+        cin >> vec[i];
+    }
+    int maxi = vec[0];
+    for(int i: vec) {
+        maxi = max(maxi, i);
     }
     
-    int max = MAX(vector, size);
-    cout << max << endl; 
-    
+    cout << maxi;
     return 0;
-}
-
-int MAX(vector<int> vector, int size) {
-    int Max = vector[0];
-    for(int i = 0; i < size; i++) {
-        Max = (Max > vector[i])? Max : vector[i];
-    }
-    return Max;
 }
