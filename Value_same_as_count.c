@@ -1,31 +1,37 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <bits/stdc++.h>
+using namespace std;
 
-int main() {
-    int n;
-    scanf("%d", &n);
+int value_as_count(vector<int>& vector) {
+    int size = vector.size();
     
-    int *arr = (int *) malloc (n * sizeof(int));
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-    
-    int count = 0;
-    for(int i = 0; i < n; i++) {
-        int val = 0;
-        for (int j = 0; j < n; j++) {
-            if(arr[i] == arr[j]) {
-                val++;
+    int same_as_count = 0;
+    for(int i = 0; i < size; i++) {
+        int occ = 0;
+        for(int j = 0; j < size; j++) {
+            if(vector[i] == vector[j]) {
+                occ++;
             }
         }
-        if (val == arr[i]) {
-            arr[i] = 0;
-            count++;
+        if(occ == vector[i]) {
+            vector[i] = 0;
+            same_as_count++;
         }
     }
     
-    printf("%d", count);
+    return same_as_count;
+}
+
+int main() {
+    int size; 
+    cin >> size;
     
-    free(arr);
+    vector<int> vector(size);
+    for(int i = 0; i < size; i++) {
+        cin >> vector[i];
+    }
+    
+    int count = value_as_count(vector);
+    
+    cout << count;
     return 0;
 }
